@@ -13,6 +13,5 @@ services:
       - db_data:/var/lib/postgresql/data
       - ./init-db:/docker-entrypoint-initdb.d
     networks:
-      - mysql_network  # Connect to the network
 volumes:
   db_data:
