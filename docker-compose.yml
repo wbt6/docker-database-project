@@ -1,16 +1,23 @@
 
 services:
   db:
-    image: postgres:15
-    container_name: smartcampus_db
+    image: mysql:8.0  # Specify the version as needed
+    container_name: mysql-smartcampus_db
     environment:
-      POSTGRES_USER: student
-      POSTGRES_PASSWORD: student123
-      POSTGRES_DB: smartcampusdb
+      MYSQL_DATABASE: smartcampusdb
+      MYSQL_USER: student  # Use a non-root user
+      MYSQL_PASSWORD: student123  # Set a secure password for the user
+      MYSQL_ROOT_PASSWORD: rootpassword  # Set a secure root password
     ports:
-      - "5432:5432"
+      - "3307:3306"
     volumes:
-      - db_data:/var/lib/postgresql/data
-      - ./init-db:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
+      - ./initdb:/docker-entrypoint-initdb.d  # Mount initdb directory
+    networks:
+      - mysql_network  # Connect to the network
+
 volumes:
   db_data:
+
+networks:
+  mysql_network:
