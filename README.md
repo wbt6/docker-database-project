@@ -1,73 +1,32 @@
-# SmartCampus Docker Database Project
+# SmartCampus Docker-Database-Project
 
-This project sets up a PostgreSQL database inside Docker for the **SmartCampus** system. 
-It includes scripts to automatically create and populate tables when the container starts.
+## What
+A sample Postgres database running in Docker with schema creation and sample data using `init-db/` scripts.
 
----
+## Start
+1. `docker compose up -d`
+2. Wait for container to initialize (watch logs with `docker logs -f project_db`)
 
-## 🧱 Project Structure
+## Connect
+- Host: `localhost`
+- Port: `5432`
+- DB: `projectdb`
+- User: `student`
+- Password: `student123`
 
-```
-.
-├── docker-compose.yml
-├── init-db/
-│   ├── 01_create_tables.sql
-│   └── 02_insert_data.sql
-└── screenshots/
-```
-- `docker-compose.yml` → Starts a PostgreSQL container.
-- `init-db/` → SQL scripts that automatically run during container setup.
-- `screenshots/` → Evidence of setup and verification.
+Use `docker exec -it project_db psql -U student -d projectdb` to run queries.
 
----
+## Stop / Remove
+- Stop: `docker compose down`
+- Stop + remove volumes (reset): `docker compose down -v`
 
-## ▶️ How to Run
+## Files
+- `docker-compose.yml` — runs postgres service
+- `init-db/01_create_tables.sql` — DDL
+- `init-db/02_insert_data.sql` — sample data
 
-1. **Start the Database**
-   ```bash
-   docker compose up
-   ```
 
-2. **Access the Database**
-   Open a new terminal and run:
-   ```bash
-   docker exec -it smartcampus_db psql -U student -d projectdb
-   ```
 
-3. **Verify the Tables**
-   Inside psql, check that all tables were created and data inserted:
-   ```sql
-   \dt
-   SELECT * FROM departments;
-   SELECT * FROM users;
-   SELECT * FROM staff_availability;
-   SELECT * FROM appointments;
-   SELECT * FROM tickets;
-   ```
 
-4. **Exit psql**
-   ```bash
-   \q
-   ```
 
----
 
-## 🧹 How to Stop and Clean Up
-
-```bash
-docker compose down
-docker compose down -v   # removes the database volume (optional)
-```
-
----
-
-## ⚙️ Troubleshooting
-
-- If port 5432 is already in use, change the left-hand side of the port mapping in `docker-compose.yml`, for example:
-  ```yaml
-  ports:
-    - "55432:5432"
-  ```
-- Then reconnect using the updated port number.
-
----
