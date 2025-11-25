@@ -30,10 +30,10 @@ SmartCampus is a platform to streamline student services across campus: advising
 - GitHub project: https://github.com/users/wbt6/projects/2
 
 ## Technologies used
-- Database: MySQL 8 (containerized via Docker Compose)
+- Database: Postgres (containerized via Docker Compose)
 - Containerization: Docker & Docker Compose
 - Backend: Node.js + Express (recommended) or Python + FastAPI
-- Frontend: React (recommended) or static HTML/CSS
+- Frontend: Bootstrap, HTML and JS
 - Cache: Redis (optional)
 - Monitoring: Prometheus + Grafana (optional)
 - Reverse proxy: Nginx
@@ -43,6 +43,7 @@ SmartCampus is a platform to streamline student services across campus: advising
 - `README.md` — this file
 - `init-db` — two MySQL scripts, one to create and one to insert test data into the database
 - `docker-compose.yml` — MySQL container example
+
 
 
 
