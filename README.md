@@ -1,8 +1,5 @@
 # SmartCampus Docker-Database-Project
 
-## What
-A sample Postgres database running in Docker with schema creation and sample data using `init-db/` scripts.
-
 ## Start
 1. `docker compose up -d`
 2. Wait for container to initialize (watch logs with `docker logs -f project_db`)
@@ -26,6 +23,8 @@ Use `docker exec -it project_db psql -U student -d projectdb` to run queries.
 - `init-db/02_insert_data.sql` — sample data
 
 # SmartCampus — Deliverable 4: Data Model & Architecture
+## Project Summary:
+SmartCampus is a platform to streamline student services across campus: advising, counseling, IT support, appointment booking, and service requests. This repository contains the database schema and deployment artifacts (Docker Compose)
 
 ## Project link:
 - GitHub project: https://github.com/users/wbt6/projects/2
@@ -44,6 +43,7 @@ Use `docker exec -it project_db psql -U student -d projectdb` to run queries.
 - `README.md` — this file
 - `init-db` — two MySQL scripts, one to create and one to insert test data into the database
 - `docker-compose.yml` — MySQL container example
+
 
 
 
