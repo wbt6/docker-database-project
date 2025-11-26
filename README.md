@@ -17,11 +17,6 @@ Use `docker exec -it project_db psql -U student -d projectdb` to run queries.
 - Stop: `docker compose down`
 - Stop + remove volumes (reset): `docker compose down -v`
 
-## Files
-- `docker-compose.yml` — runs postgres service
-- `init-db/01_create_tables.sql` — DDL
-- `init-db/02_insert_data.sql` — sample data
-
 # SmartCampus — Deliverable 4: Data Model & Architecture
 ## Project Summary:
 SmartCampus is a platform to streamline student services across campus: advising, counseling, IT support, appointment booking, and service requests. This repository contains the database schema and deployment artifacts (Docker Compose)
@@ -32,7 +27,7 @@ SmartCampus is a platform to streamline student services across campus: advising
 ## Technologies used
 - Database: Postgres (containerized via Docker Compose)
 - Containerization: Docker & Docker Compose
-- Backend: Node.js + Express (recommended) or Python + FastAPI
+- Backend: Node.js + Express or Python + FastAPI
 - Frontend: Bootstrap, HTML and JS
 - Cache: Redis (optional)
 - Monitoring: Prometheus + Grafana (optional)
@@ -43,6 +38,7 @@ SmartCampus is a platform to streamline student services across campus: advising
 - `README.md` — this file
 - `init-db` — two MySQL scripts, one to create and one to insert test data into the database
 - `docker-compose.yml` — MySQL container example
+
 
 
 
