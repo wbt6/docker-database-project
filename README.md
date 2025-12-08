@@ -1,73 +1,49 @@
-# SmartCampus Docker Database Project
+# SmartCampus Docker-Database-Project
 
-This project sets up a PostgreSQL database inside Docker for the **SmartCampus** system. 
-It includes scripts to automatically create and populate tables when the container starts.
+## Start
+1. `docker compose up -d`
+2. Wait for container to initialize (watch logs with `docker logs -f project_db`)
 
----
+## Connect
+- Host: `localhost`
+- Port: `5432`
+- DB: `projectdb`
+- User: `student`
+- Password: `student123`
 
-## 🧱 Project Structure
+Use `docker exec -it project_db psql -U student -d projectdb` to run queries.
 
-```
-.
-├── docker-compose.yml
-├── init-db/
-│   ├── 01_create_tables.sql
-│   └── 02_insert_data.sql
-└── screenshots/
-```
-- `docker-compose.yml` → Starts a PostgreSQL container.
-- `init-db/` → SQL scripts that automatically run during container setup.
-- `screenshots/` → Evidence of setup and verification.
+## Stop / Remove
+- Stop: `docker compose down`
+- Stop + remove volumes (reset): `docker compose down -v`
 
----
+# SmartCampus — Deliverable 4: Data Model & Architecture
+## Project Summary:
+SmartCampus is a platform to streamline student services across campus: advising, counseling, IT support, appointment booking, and service requests. This repository contains the database schema and deployment artifacts (Docker Compose)
 
-## ▶️ How to Run
+## Project link:
+- GitHub project: https://github.com/users/wbt6/projects/2
 
-1. **Start the Database**
-   ```bash
-   docker compose up
-   ```
+## Technologies used
+- Database: Postgres (containerized via Docker Compose)
+- Containerization: Docker & Docker Compose
+- Backend: Node.js + Express or Python + FastAPI
+- Frontend: Bootstrap, HTML and JS
+- Cache: Redis (optional)
+- Monitoring: Prometheus + Grafana (optional)
+- Reverse proxy: Nginx
+- CI/CD: GitHub Actions
 
-2. **Access the Database**
-   Open a new terminal and run:
-   ```bash
-   docker exec -it smartcampus_db psql -U student -d projectdb
-   ```
+## Contents
+- `README.md` — this file
+- `init-db` — two MySQL scripts, one to create and one to insert test data into the database
+- `docker-compose.yml` — MySQL container example
 
-3. **Verify the Tables**
-   Inside psql, check that all tables were created and data inserted:
-   ```sql
-   \dt
-   SELECT * FROM departments;
-   SELECT * FROM users;
-   SELECT * FROM staff_availability;
-   SELECT * FROM appointments;
-   SELECT * FROM tickets;
-   ```
 
-4. **Exit psql**
-   ```bash
-   \q
-   ```
 
----
 
-## 🧹 How to Stop and Clean Up
 
-```bash
-docker compose down
-docker compose down -v   # removes the database volume (optional)
-```
 
----
 
-## ⚙️ Troubleshooting
 
-- If port 5432 is already in use, change the left-hand side of the port mapping in `docker-compose.yml`, for example:
-  ```yaml
-  ports:
-    - "55432:5432"
-  ```
-- Then reconnect using the updated port number.
 
----
