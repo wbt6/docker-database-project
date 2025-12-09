@@ -18,8 +18,8 @@ try {
         FROM appointments a
         JOIN users u ON u.user_id = a.staff_id
         WHERE a.student_id = ?
-          AND a.start_time >= NOW()
-        ORDER BY a.start_time ASC
+          AND a.appointment_time >= NOW()
+        ORDER BY a.appointment_time ASC
     ");
     $stmt->execute([$user['user_id']]);
     $appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
