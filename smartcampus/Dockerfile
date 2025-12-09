@@ -2,7 +2,7 @@
 FROM python:3.11-slim
 
 # App directory
-WORKDIR /app
+WORKDIR /smartcampus
 
 # Install dependencies
 COPY requirements.txt .
