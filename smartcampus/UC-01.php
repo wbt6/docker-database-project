@@ -40,6 +40,10 @@ try {
   <h1>Student Dashboard</h1>
   <p>Welcome, <?=htmlspecialchars($user['name'])?> — this is your dashboard.</p>
 
+  <a class="btn btn-primary" href="UC-02.php">Book Appointment</a>
+  <a class="btn btn-warning mb-3" href="UC-04.php">Submit Ticket / Feedback</a>
+  <a class="btn btn-secondary" href="logout.php">Logout</a>
+
   <h3>Upcoming Appointments</h3>
 
   <?php if (isset($error)): ?>
@@ -59,9 +63,6 @@ try {
       <?php endforeach; ?>
     </ul>
   <?php endif; ?>
-  <a class="btn btn-warning mb-3" href="UC-04.php">Submit Ticket / Feedback</a>
-  <a class="btn btn-primary" href="UC-02.php">Book Appointment</a>
-  <a class="btn btn-secondary" href="logout.php">Logout</a>
 </div>
 </body>
 </html>
