@@ -35,7 +35,7 @@ $user = $_SESSION['user'];
       <input type="checkbox" name="is_recurring" id="rec" class="form-check-input">
       <label for="rec" class="form-check-label">Recurring (adds repeat weekly within semester ranges) — not fully implemented</label>
     </div>
-    <button class="btn btn-primary" type="submit">Add Availability (creates a row in staff_availability)</button>
+    <button class="btn btn-primary" type="submit">Add Availability</button>
   </form>
 
   <a class="btn btn-secondary mt-3" href="logout.php">Logout</a>

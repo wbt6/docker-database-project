@@ -13,7 +13,7 @@ $user = $_SESSION['user'];
 try {
     $pdo = get_db();
     $stmt = $pdo->prepare("
-        SELECT a.appointment_id, a.service_type, a.start_time, a.end_time,
+        SELECT a.appointment_id, a.service_type, a.appointment_time,
                u.name AS staff_name
         FROM appointments a
         JOIN users u ON u.user_id = a.staff_id
@@ -54,7 +54,7 @@ try {
         <li class="list-group-item">
           <strong><?=htmlspecialchars($a['service_type'])?></strong><br>
           With: <?=htmlspecialchars($a['staff_name'])?><br>
-          Time: <?=htmlspecialchars($a['start_time'])?> — <?=htmlspecialchars($a['end_time'])?>
+          Time: <?=htmlspecialchars($a['appointment_time'])?>
         </li>
       <?php endforeach; ?>
     </ul>

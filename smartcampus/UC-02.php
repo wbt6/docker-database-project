@@ -58,16 +58,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_appointment'])) 
 }
 
 /* --- Step 1: Service Types --- */
-$service_types = ["advising", "tutoring"];
+$service_types = ["Advising", "Tutoring", "IT support"];
 
 /* --- Step 2: Fetch staff by department --- */
 $staff = [];
 if ($service_type) {
     $stmt = $pdo->prepare("
-        SELECT user_id, name 
+        SELECT users.user_id, users.name 
         FROM users
-        WHERE role = 'staff'
-          AND department = ?
+        JOIN departments d ON d.department_id = users.department_id
+        WHERE users.role = 'staff'
+          AND d.name = ?
     ");
     $stmt->execute([$service_type]);
     $staff = $stmt->fetchAll(PDO::FETCH_ASSOC);
