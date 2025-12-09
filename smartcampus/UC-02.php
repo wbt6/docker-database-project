@@ -81,7 +81,6 @@ if ($selected_staff) {
         FROM staff_availability
         WHERE staff_id = ?
           AND start_time >= NOW()
-          AND is_block = false
         ORDER BY start_time ASC
     ");
     $stmt->execute([$selected_staff]);
