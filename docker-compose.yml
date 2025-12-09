@@ -14,3 +14,6 @@ services:
       - ./init-db:/docker-entrypoint-initdb.d
 volumes:
   db_data:
+
+  networks:
+  smartcampus_net:
