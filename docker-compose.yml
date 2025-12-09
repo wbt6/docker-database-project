@@ -12,22 +12,5 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./init-db:/docker-entrypoint-initdb.d
-
-  backend:
-    build:
-      context: ./smartcampus
-      dockerfile: Dockerfile
-    container_name: smartcampus-site
-    restart: always
-    depends_on:
-      - db
-    environment:
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_NAME: smartcampusdb
-      DB_USER: student
-      DB_PASSWORD: student123
-    ports:
-      - "8000:8000"
 volumes:
   db_data:
