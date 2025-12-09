@@ -32,15 +32,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_appointment'])) 
 
         if ($slot) {
             $insert = $pdo->prepare("
-                INSERT INTO appointments (student_id, staff_id, service_type, start_time, end_time)
-                VALUES (?, ?, ?, ?, ?)
+                INSERT INTO appointments (student_id, staff_id, service_type, appointment_time)
+                VALUES (?, ?, ?, ?)
             ");
             $insert->execute([
                 $user['user_id'],
                 $slot['staff_id'],
                 $service_type,
                 $slot['start_time'],
-                $slot['end_time']
             ]);
 
             // OPTIONAL: remove availability so it cannot be booked twice
