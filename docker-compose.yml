@@ -12,10 +12,12 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
       - ./init-db:/docker-entrypoint-initdb.d
+    networks:
+      - smartcampus_net
+
 volumes:
   db_data:
-networks:
-  smartcampus_net
 
-  networks:
+networks:
   smartcampus_net:
+    external: true

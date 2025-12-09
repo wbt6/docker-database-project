@@ -1,3 +1,8 @@
+INSERT INTO departments (department_id, name) VALUES
+(1, 'Advising'),
+(2, 'Tutoring'),
+(3, 'IT support');
+
 INSERT INTO users (name, email, role, department_id) VALUES
 ('Alice Student', 'alice@umbc.edu', 'student', NULL),
 ('Bob Student', 'bob@umbc.edu', 'student', NULL),
