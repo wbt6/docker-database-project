@@ -26,6 +26,11 @@ When logged in, you will see the availability manager. Here, you can create avai
 ### For Admins
 When logged in, you will be brought to the analytics page. There are currently 2 buttons available: Generate usage report, and Schedule report (note that both are not currently available). Clicking **generate usage report** will create a report on service usage, appointments, ticket trends, and staff performance immediately. Clicking **Schedule report**, you are able to schedule a regular report at a specific time to be sent to a valid email address.
 
+## Site Outline
+This was made using Figma. A link has been attached.
+https://www.figma.com/make/FXrv1C0eyUzTLisjhdRkUO/Ticketing-Feedback-System?node-id=0-1&p=f&t=sGcLv5zjlnoI5BhG-0&fullscreen=1
+
+
 ## Technologies used
 - Database: Postgres (containerized via Docker Compose)
 - Containerization: Docker & Docker Compose
