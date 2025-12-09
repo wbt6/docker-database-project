@@ -8,8 +8,8 @@ This repository contains the code for the Smartcampus website and database. Smar
 2) Clone the repo to your local machine
 3) Docker compose up in powershell while in your cloned repo to acquire your database image `docker compose up -d`
 4) pull the most recent dockerhub image using command `docker pull wbt6/smartcampus:{tag}` via command prompt
-4.5) You can make sure your database is running and correctly has the tables and entries by running `docker exec -it smartcampus_db psql -U student -d smartcampusdb`, followed by 
-5) run the command `docker run -d --name smartcampus --network smartcampus_net -e DB_HOST=db -e DB_PORT=5432 -e DB_NAME=smartcampusdb -e DB_USER=student -e DB_PASS=student123 -p 8080:80 wbt6/smartcampus:17`
+4.5) You can make sure your database is running and correctly has the tables and entries by running `docker exec -it smartcampus_db psql -U student -d smartcampusdb`, followed by `\dt`. You should be able to run sequel queries to check table and entry existence
+5) run the command `docker run -d --name smartcampus --network smartcampus_net -e DB_HOST=db -e DB_PORT=5432 -e DB_NAME=smartcampusdb -e DB_USER=student -e DB_PASS=student123 -p 8080:80 wbt6/smartcampus:{tag}`
 6) it should create a container named smartcampus, on the same network as the database
 7) run the container, which should be at http://localhost:8080, it will take a few seconds to load upon first run, so be patient
 8) If all steps are followed, you should see the test login screen. This is where the Single Sign On (SSO) Would be integrated to allow you to use your school login credentials to be used to access the site, but for testing purposes, this page has been provided. For more information about using the Website, see the User Guide
