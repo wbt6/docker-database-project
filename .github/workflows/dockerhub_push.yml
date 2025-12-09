@@ -20,4 +20,4 @@ jobs:
         with:
           context: smartcampus/
           push: true
-          tags: cgdzbc/smartcampus:${{github.run_number}}
+          tags: wbt6/smartcampus:${{github.run_number}}
