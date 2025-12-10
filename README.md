@@ -1,4 +1,4 @@
-# SmartCampus: A Digital Platform for Optimizing Student Services ci/cd test
+# SmartCampus: A Digital Platform for Optimizing Student Services
 ##Introduction
 This repository contains the code for the Smartcampus website and database. Smartcampus is a centralized digital platform for advising, tutoring, SI sessions, and IT support for UMBC. Within this readme file are instructions which will allow you to run this as an image within dockerhub containers
 
