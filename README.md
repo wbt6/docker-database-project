@@ -1,7 +1,6 @@
 # SmartCampus: A Digital Platform for Optimizing Student Services
 ## Introduction
-This repository contains the code for the Smartcampus website and database. Smartcampus is a centralized digital platform for advising, tutoring, SI sessions, and IT support for UMBC. Within this readme file are instructions which will allow you to run this as an image within dockerhub containers
-This repo also includes the presentation made at the end of the project, which includes the financial projections, user needs, use sace diagrams, entity relationship diagrams, and architecture diagram. The presentation is under the name "IS 436 Deliverable 5_ Smartcampus"
+This repository contains the code for the Smartcampus website and database. Smartcampus is a centralized digital platform for advising, tutoring, SI sessions, and IT support for UMBC. Within this readme file are instructions which will allow you to run this as an image within dockerhub containers. This repo also includes the presentation made at the end of the project, which includes the financial projections, user needs, use sace diagrams, entity relationship diagrams, and architecture diagram. The presentation is under the name "IS 436 Deliverable 5_ Smartcampus"
 
 ## Downloading/Running Instructions
 
